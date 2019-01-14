@@ -1,0 +1,103 @@
+.
+.TH FFF "1" "October 2018" "fff" "User Commands"
+.SH NAME
+fff \- :rocket: fucking fast file-manager
+.SH SYNOPSIS
+.B fff
+.SH DESCRIPTION
+A simple file manager written in bash.
+.PP
+.SH "Usage"
+.
+.nf
+
+j: scroll down
+k: scroll up
+h: go to parent dir
+l: go to child dir
+
+enter: go to child dir
+backspace: go to parent dir
+
+\-: Go to previous dir\.
+
+g: go to top
+G: go to bottom
+
+\.: toggle hidden files
+/: search
+t: go to trash
+~: go to home
+s: open shell in current dir
+x: view file/dir attributes
+
+down:  scroll down
+up:    scroll up
+left:  go to parent dir
+right: go to child dir
+
+f: new file
+n: new dir
+r: rename
+
+y: mark copy
+m: mark move
+d: mark trash (~/\.cache/fff/trash/)
+p: paste/move/delete
+c: clear file selections
+
+[1-9]: favourites/bookmarks (see customization)
+
+q: exit
+.
+.fi
+.
+.SH "Customization"
+.
+.nf
+
+# Use LS_COLORS to color fff.
+# (On by default if available)
+# (Ignores FFF_COL1)
+export FFF_LS_COLORS=1
+
+# Directory color [0\-9]
+export FFF_COL1=2
+
+# Status color [0\-9]
+export FFF_COL2=7
+
+# Selection color [0\-9] (copied/moved files)
+export FFF_COL3=6
+
+# Cursor color [0\-9]
+export FFF_COL4=1
+
+# Text Editor
+export EDITOR="vim"
+
+# File Opener
+export FFF_OPENER="xdg\-open"
+
+# CD on exit helper file
+# Default: '${XDG_CACHE_HOME}/fff/fff.d'
+#          If not using XDG, '${HOME}/.cache/fff/fff.d' is used.
+export FFF_CD_FILE=~/.fff_d
+
+# Trash Directory
+# Default: '${XDG_CACHE_HOME}/fff/trash'
+#          If not using XDG, '${HOME}/.cache/fff/trash' is used.
+export FFF_TRASH=~/.cache/fff/trash
+
+# Favourites (Bookmarks) (keys 1-9) (dir or file)
+export FFF_FAV1=~/projects
+export FFF_FAV2=~/.bashrc
+export FFF_FAV3=~/Pictures/Wallpapers/
+export FFF_FAV4=/usr/share
+export FFF_FAV5=/
+export FFF_FAV6=
+export FFF_FAV7=
+export FFF_FAV8=
+export FFF_FAV9=
+.
+.fi
