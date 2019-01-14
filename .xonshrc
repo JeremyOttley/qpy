@@ -25,7 +25,7 @@ def _mkcd(args, stdin=None):
         return
 
 aliases['mkcd'] = _mkcd
-aliases['feh'] = 'feh -. --magick-timeout 1'
+#aliases['feh'] = 'feh -. --magick-timeout 1'
 aliases['mkdir'] = 'mkdir -p'
 aliases['rm'] = 'rm -I'
 aliases['gs'] = 'git status'
@@ -44,7 +44,7 @@ def _emacs(args, stdin=None):
 aliases['emacs'] = _emacs
 
 $BROWSER="qutebrowser"
-#$TERM="rxvt-unicode-256color"
+#$TERM="kitty"
 #$EDITOR='/usr/bin/vim'
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
 
