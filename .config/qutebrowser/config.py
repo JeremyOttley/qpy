@@ -247,7 +247,7 @@ c.tabs.show = 'multiple'
 # c.tabs.wrap = True
 
 # c.url.auto_search = 'naive'
- c.url.default_page = 'https://millionshort.com/'
+c.url.default_page = 'https://millionshort.com/'
 # c.url.incdec_segments = ['path', 'query']
 c.url.searchengines = {'DEFAULT': 'http://www.duckduckgoog.com/search?q={}'}
 #c.url.start_pages = ['/home/gazbit/.startpage/vulgrim/index.html']
