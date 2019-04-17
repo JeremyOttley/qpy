@@ -91,7 +91,7 @@ c.colors.tabs.selected.odd.fg = c.colors.tabs.selected.even.fg
 # c.colors.webpage.bg = 'white'
 
 c.completion.height = '40%'
-c.completion.web_history_max_items = 2500
+c.completion.web_history.max_items = 2500
 # c.completion.cmd_history_max_items = 100
 # c.completion.quick = True
 # c.completion.scrollbar.padding = 2
