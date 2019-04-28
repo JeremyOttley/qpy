@@ -19,3 +19,12 @@ export SSH_AUTH_SOCK
 
 # Polkit agent for virt-manager
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Compositor
+#compton -cCFb --backend glx --vsync opengl &
+
+# Force KDE environment when running qtile
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+#export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
+#XDG_CURRENT_DESKTOP=KDE
+#export DESKTOP_SESSION=kde
