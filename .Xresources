@@ -1,0 +1,79 @@
+! ██╗░░██╗██████╗░███████╗███████╗░██████╗░██╗░░░██╗██████╗░░██████╗███████╗███████╗
+! ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║░░░██║██╔══██╗██╔════╝██╔════╝██╔════╝
+! ░╚███╔╝░██████╔╝█████╗░░███████╗██║░░░██║██║░░░██║██████╔╝██║░░░░░█████╗░░███████╗
+! ░██╔██╗░██╔══██╗██╔══╝░░╚════██║██║░░░██║██║░░░██║██╔══██╗██║░░░░░██╔══╝░░╚════██║
+! ██╔╝░██╗██║░░██║███████╗███████║╚██████╔╝╚██████╔╝██║░░██║╚██████╗███████╗███████║
+! ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚══════╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝░╚═════╝╚══════╝╚══════╝
+!
+! -----------------------------------
+
+*dpi: 210
+
+Xft.dpi: 210
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+#define WINDOWGEOMETRY 90x20
+! xterm
+xterm*dynamiccolors:      true
+xterm*utf8:               2
+xterm*geometry:           WINDOWGEOMETRY
+xterm*visualBell:         off
+xterm*highlightSelection: true
+
+Xcursor.size: 32
+
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #25283d
+*.color8:       #709080
+
+! red
+*.color1:       #edcf8e
+*.color9:       #ee2e31
+
+! green
+*.color2:       #07bee8
+*.color10:      #e83f6f
+
+! yellow
+*.color3:       #84dcc6
+*.color11:      #f0dfaf
+
+! blue
+*.color4:       #0a8754
+*.color12:      #94bff3
+
+! magenta
+*.color5:       #af3b6e
+*.color13:      #ffbf00
+
+! cyan
+*.color6:       #cbf3f0
+*.color14:      #1cfeba
+
+! white
+*.color7:       #edddd4
+*.color15:      #ffffff
+
+*.font: xft:Iosevka:style=Regular:size=11, \
+            -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+*.boldFont: xft:Iosevka:style=Bold:size=11
+*.italicFont: xft:Iosevka:style=Italic:size=11
+*.boldItalicFont: xft:Iosevka:style=Bold Italic:size=11
+
+Xmessage*defaultButton:            okay
+Xmessage*form.message.Scroll:      WhenNeeded
+
+*VT100.colorBDMode:                  true
+*VT100.colorBD:                      red
+*VT100.colorULMode:                  true
+*VT100.colorUL:                      cyan   
+*VT100.veryBoldColors:               6
