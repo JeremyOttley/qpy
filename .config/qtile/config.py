@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import os
-import re
-import socket
-import subprocess
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
 from libqtile import layout, bar, widget
 
-from typing import List
+try:
+    from typing import List  # noqa: F401
+except ImportError:
+    pass
 
 mod = "mod4"
 
@@ -43,14 +42,34 @@ keys = [
     Key([mod], "r", lazy.spawncmd()),
 ]
 
-groups = [Group(i) for i in "12345"
+groups = []
+
+# FOR QWERTY KEYBOARDS
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+
+group_labels = ["", "", "", "", "", "", "", "", "", "",]
+
+group_layouts = ["max", "max", "max", "max", "max", "max", "max", "max", "max", "max",]
+
+
+for i in range(len(group_names)):
+    groups.append(
+        Group(
+            name=group_names[i],
+            layout=group_layouts[i].lower(),
+            label=group_labels[i],
+        ))
 
 for i in groups:
     keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
 
-        # mod1 + shift + letter of group = switch to & move focused window to group
+#CHANGE WORKSPACES
+        Key([mod], i.name, lazy.group[i.name].toscreen()),
+        Key([mod], "Tab", lazy.screen.next_group()),
+        Key(["mod1"], "Tab", lazy.screen.next_group()),
+        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
+
+# MOVE WINDOW TO SELECTED WORKSPACE 1-10
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
 
@@ -60,7 +79,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='sans',
+    font='SanFranciscoDisplay',
     fontsize=12,
     padding=3,
 )
@@ -73,7 +92,7 @@ screens = [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.TextBox("default config", name="default"),
+                widget.TextBox("gazbit config", name="default"),
                 widget.Systray(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
             ],
@@ -92,7 +111,7 @@ mouse = [
 ]
 
 dgroups_key_binder = None
-dgroups_app_rules: List = []
+dgroups_app_rules = []  # type: List
 main = None
 follow_mouse_focus = True
 bring_front_click = False
@@ -121,8 +140,14 @@ focus_on_window_activation = "smart"
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/autostart.sh'])
+subprocess.call([home + '/.config/qtile/autostart.sh'])
 
-##### NEEDED FOR SOME JAVA APPS #####
-
-wmname = "qtile"
+# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
+# string besides java UI toolkits; you can see several discussions on the
+# mailing lists, github issues, and other WM documentation that suggest setting
+# this string if your java app doesn't work correctly. We may as well just lie
+# and say that we're a working one by default.
+#
+# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
+# java that happens to be on java's whitelist.
+wmname = "Qtile"
