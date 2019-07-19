@@ -9,6 +9,9 @@ $PROMPT = '自由 [{short_cwd}]'
 ##SYS
 aliases['la'] = 'ls -a'
 
+# python -m SimpleHTTPServer 4242
+aliases['serve'] = 'SimpleHTTPServer 4242'
+
 ##DIR JUMPS
 aliases['work'] = 'cd $DEV'
 
