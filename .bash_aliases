@@ -8,3 +8,4 @@ alias ll='ls -la'
 ## Show hidden files ##
 alias l.='ls -d .* --color=auto'
 
+alias serve="python -m SimpleHTTPServer 4242"
